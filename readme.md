@@ -2,6 +2,23 @@
 
 **Doki Theme is a project by [Unthrottled](https://github.com/Unthrottled), all credits for the themes and assets used go to Unthrottled.** All I did was support theming additional things.
 
+## Screenshots
+
+<details>
+  <summary>Raphtalia</summary>
+  <img src="screenshots/raphtalia.png" alt="Raphtalia">
+</details>
+
+<details>
+  <summary>Hatsune Miku</summary>
+  <img src="screenshots/miku.png" alt="Hatsune Miku">
+</details>
+
+<details>
+  <summary>Zero Two</summary>
+  <img src="screenshots/zerotwo.png" alt="Zero Two">
+</details>
+
 ## Kitty
 The best terminal emulator deserves the best themes.
 
