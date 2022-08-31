@@ -18,13 +18,13 @@ Add the following to your `kitty.conf`, replacing `themename` with the theme you
 include doki/themes/themename.conf
 
 # Background image
-include doki/wallpaper/themename.conf
+include doki/wallpapers/themename.conf
 
 # Sticker image
 # If you want to use a sticker and background at the same time,
 # you need to use the special sticker-compatible background configs instead of the normal ones
 include doki/stickers/themename.conf
-include doki/wallpaper/themename-sticker-compat.conf
+include doki/wallpapers/themename-sticker-compat.conf
 ```
 
 ## Lite XL
