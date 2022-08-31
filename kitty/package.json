@@ -1,0 +1,13 @@
+{
+  "name": "doki-theme-kitty",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node .",
+    "install": "rm -rf ~/.config/kitty/doki && cp -r ./build ~/.config/kitty/doki"
+  },
+  "dependencies": {
+    "file-ez": "^1.0.1"
+  }
+}

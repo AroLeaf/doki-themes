@@ -1,0 +1,10 @@
+{
+  "name": "doki-theme-lite-xl",
+  "version": "0.1.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node .",
+    "install": "rm -rf ~/.config/lite-xl/colors/doki && cp -r ./build ~/.config/lite-xl/colors/doki"
+  }
+}
