@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node .",
+    "package": "tar -cf lite-xl.tar build && gzip lite-xl.tar",
     "install": "rm -rf ~/.config/lite-xl/colors/doki && cp -r ./build ~/.config/lite-xl/colors/doki"
   }
 }
