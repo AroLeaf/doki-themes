@@ -1,10 +1,11 @@
 {
   "name": "doki-theme-kitty",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "main": "index.js",
   "scripts": {
     "build": "node .",
+    "package": "tar -cf kitty.tar build && gzip kitty.tar",
     "install": "rm -rf ~/.config/kitty/doki && cp -r ./build ~/.config/kitty/doki"
   },
   "dependencies": {

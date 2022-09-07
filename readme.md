@@ -1,8 +1,10 @@
 # Doki Theme Extensions
 
-**Doki Theme is a project by [Unthrottled](https://github.com/Unthrottled), all credits for the themes and assets used go to Unthrottled.** All I did was support theming additional things.
+**[Doki Theme](https://github.com/doki-theme) is a project by [Unthrottled](https://github.com/Unthrottled). All credits for the themes and assets used go to Unthrottled.** All I did was support theming additional things.
 
 ## Screenshots
+
+These are just a few of the themes.
 
 <details>
   <summary>Raphtalia</summary>
@@ -23,6 +25,10 @@
 The best terminal emulator deserves the best themes.
 
 ### Install
+
+Download from the [releases tab](https://github.com/AroLeaf/doki-themes/releases), uncompress, and move to `~/.config/kitty/doki`, or build:
+
+- Clone the repo.
 - Run `deps.sh` from this repo's root folder, if you haven't already. This will install Doki's master themes and assets.
 - `cd` into `kitty`.
 - Run `npm run build` to build the themes.
@@ -48,6 +54,10 @@ include doki/wallpapers/themename-sticker-compat.conf
 Can't have it be beaten by vscode over some themes.
 
 ### Install
+
+Download from the [releases tab](https://github.com/AroLeaf/doki-themes/releases), uncompress, and move to `~/.config/lite-xl/colors/doki`, or build:
+
+- Clone the repo.
 - Run `deps.sh` from this repo's root folder, if you haven't already. This will install Doki's master themes and assets.
 - `cd` into `lite-xl`.
 - Run `npm run build` to build the themes.
