@@ -74,7 +74,7 @@ async function buildThemes(definitions) {
     const id = theme.name
       .toLowerCase()
       .replace(/ +/g, '-')
-      .replace(/[(:\.)]/g);
+      .replace(/[(:\.)]/g, '');
     await fs.writeFile(path.resolve(`build/${id}.lua`), theme.config, 'utf8');
   }
 }
