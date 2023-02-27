@@ -35,9 +35,7 @@ async function buildThemes(definitions) {
 
       url_color ${theme.colors.accentColor}
 
-      # active_tab_foreground 
       active_tab_background ${theme.colors.highlightColor}
-      # inactive_tab_foreground
       inactive_tab_background ${theme.colors.textEditorBackground}
 
       # black
@@ -78,7 +76,7 @@ async function buildThemes(definitions) {
     const id = theme.name
       .toLowerCase()
       .replace(/ +/g, '-')
-      .replace(/[(:\.)]/g);
+      .replace(/[(:\.)]/g, '');
     await fs.writeFile(path.resolve(`build/themes/${id}.conf`), theme.config, 'utf8');
   }
 }
@@ -95,7 +93,7 @@ async function buildBackgrounds(definitions) {
     const id = wallpaper.name
       .toLowerCase()
       .replace(/ +/g, '-')
-      .replace(/[(:\.)]/g);
+      .replace(/[(:\.)]/g, '');
     
     await $(`cp ../assets/backgrounds/wallpapers/transparent/smol/${wallpaper.file} build/wallpapers/${wallpaper.file}`);
     
@@ -133,7 +131,7 @@ async function buildStickers(definitions) {
     const id = sticker.name
       .toLowerCase()
       .replace(/ +/g, '-')
-      .replace(/[(:\.)]/g);
+      .replace(/[(:\.)]/g, '');
 
     await $(`cp ${stickerFiles.find(file => file.endsWith(sticker.file))} build/stickers/${sticker.file}`);
     

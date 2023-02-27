@@ -36,7 +36,7 @@ Download from the [releases tab](https://github.com/AroLeaf/doki-themes/releases
 
 ### Usage
 Add the following to your `kitty.conf`, replacing `themename` with the theme you want to use:
-```sh
+```conf
 # Color theme
 include doki/themes/themename.conf
 
