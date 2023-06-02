@@ -1,0 +1,17 @@
+{
+  "name": "doki-theme-discord",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node .",
+    "package": "tar -cf discord.tar build && gzip discord.tar",
+    "install-themes": "cp -r build/themes/* ~/.config/BetterDiscord/themes",
+    "install-plugin": "cp build/doki-theme.plugin.js ~/.config/BetterDiscord/plugins/doki-theme.plugin.js",
+    "uninstall": "rm -rf ~/.config/BetterDiscord/themes/doki-*  ~/.config/BetterDiscord/plugins/doki-theme.plugin.js"
+  },
+  "dependencies": {
+    "colorjs.io": "^0.4.3",
+    "file-ez": "^1.0.1"
+  }
+}

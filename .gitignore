@@ -3,3 +3,4 @@ theme
 assets
 build
 *.tar.gz
+default.css

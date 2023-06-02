@@ -14,10 +14,7 @@ async function prepare() {
 
 
 async function buildThemes(definitions) {
-  const themes = definitions.map(definition => ({
-    ...definition,
-    colors: getColors(definition),
-  })).map(theme => ({
+  const themes = definitions.map(theme => ({
     name: theme.conflictName || theme.name,
     config: `
       # Doki Theme: ${theme.name}
@@ -73,11 +70,7 @@ async function buildThemes(definitions) {
   }));
 
   for (const theme of themes) {
-    const id = theme.name
-      .toLowerCase()
-      .replace(/ +/g, '-')
-      .replace(/[(:\.)]/g, '');
-    await fs.writeFile(path.resolve(`build/themes/${id}.conf`), theme.config, 'utf8');
+    await fs.writeFile(path.resolve(`build/themes/${theme.id}.conf`), theme.config, 'utf8');
   }
 }
 

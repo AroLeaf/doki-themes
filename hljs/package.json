@@ -1,0 +1,10 @@
+{
+  "name": "doki-theme-discord",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "build": "node .",
+    "package": "tar -cf hljs.tar build && gzip hljs.tar"
+  }
+}
