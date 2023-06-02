@@ -15,6 +15,7 @@ async function prepare() {
 
 async function buildThemes(definitions) {
   const themes = definitions.map(theme => ({
+    id: theme.id,
     name: theme.conflictName || theme.name,
     config: `
       # Doki Theme: ${theme.name}

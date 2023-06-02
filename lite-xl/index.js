@@ -18,10 +18,8 @@ async function buildThemes(definitions) {
     return `rgba(${part(0)}, ${part(1)}, ${part(2)}, ${(part(3)/256).toFixed(2)})`;
   }
 
-  const themes = definitions.map(definition => ({
-    ...definition,
-    colors: getColors(definition),
-  })).map(theme => ({
+  const themes = definitions.map(theme => ({
+    id: theme.id,
     name: theme.conflictName || theme.name,
     config: `
       -- Doki Theme: ${theme.name}
@@ -71,11 +69,7 @@ async function buildThemes(definitions) {
   }));
 
   for (const theme of themes) {
-    const id = theme.name
-      .toLowerCase()
-      .replace(/ +/g, '-')
-      .replace(/[(:\.)]/g, '');
-    await fs.writeFile(path.resolve(`build/${id}.lua`), theme.config, 'utf8');
+    await fs.writeFile(path.resolve(`build/${theme.id}.lua`), theme.config, 'utf8');
   }
 }
 
