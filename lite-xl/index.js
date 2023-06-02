@@ -1,4 +1,4 @@
-const { getColors, getDefinitions } = require('../shared');
+const { getDefinitions } = require('../shared');
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const $ = require('node:util').promisify(require('node:child_process').exec);

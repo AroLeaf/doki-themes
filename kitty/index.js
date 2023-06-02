@@ -1,4 +1,4 @@
-const { getColors, getDefinitions } = require('../shared');
+const { getDefinitions } = require('../shared');
 const fs = require('node:fs/promises');
 const fz = require('file-ez');
 const path = require('node:path');
