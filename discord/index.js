@@ -163,7 +163,7 @@ async function getThemes(definitions) {
 
 async function getBackgrounds(definitions) {
   const wallpapers = definitions.flatMap(definition => Object.entries(definition.stickers).map(([type, sticker]) => ({
-    id: `${definition.name}${type === 'default' ? '' : `-${type}`}`,
+    id: `${definition.id}${type === 'default' ? '' : `-${type}`}`,
     name: `${definition.conflictName || definition.name}${type === 'default' ? '' : ` (${type})`}`,
     url: `https://raw.githubusercontent.com/doki-theme/doki-theme-assets/master/backgrounds/wallpapers/transparent/${sticker.name}`,
     position: sticker.anchor,
@@ -197,7 +197,7 @@ async function getStickers(definitions) {
   const stickerFiles = await fz.recursive(path.resolve('../assets/stickers/vscode')).then(files => files.map(file => file.replace(/^.*assets\//, '')));
   
   const stickers = definitions.flatMap(definition => Object.entries(definition.stickers).map(([type, sticker]) => ({
-    id: `${definition.name}${type === 'default' ? '' : `-${type}`}`,
+    id: `${definition.id}${type === 'default' ? '' : `-${type}`}`,
     name: `${definition.conflictName || definition.name}${type === 'default' ? '' : ` (${type})`}`,
     url: `https://raw.githubusercontent.com/doki-theme/doki-theme-assets/master/${stickerFiles.find(file => file.endsWith(sticker.name))}`,
   })).map(sticker => ({
