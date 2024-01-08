@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node .",
-    "package": "tar -cf discord.tar build && gzip discord.tar",
+    "package": "tar -cf discord.tar build/themes && gzip discord.tar",
     "install-themes": "cp -r build/themes/* ~/.config/BetterDiscord/themes",
     "install-plugin": "cp build/doki-theme.plugin.js ~/.config/BetterDiscord/plugins/doki-theme.plugin.js",
     "uninstall": "rm -rf ~/.config/BetterDiscord/themes/doki-*  ~/.config/BetterDiscord/plugins/doki-theme.plugin.js"

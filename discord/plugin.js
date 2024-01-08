@@ -17,10 +17,14 @@ module.exports = class {
     this.wallpaperId = BdApi.Data.load('doki-theme', 'wallpaperId') || '';
     this.stickerId = BdApi.Data.load('doki-theme', 'stickerId') || '';
     this.updateTheme();
+    this.updateWallpaper();
+    this.updateSticker();
   }
 
   stop() {
     BdApi.DOM.removeStyle('doki-theme');
+    BdApi.DOM.removeStyle('doki-wallpaper');
+    BdApi.DOM.removeStyle('doki-sticker');
   }
 
   getSettingsRow(options) {

@@ -57,7 +57,7 @@ async function prepare() {
 
 
 async function getThemes(definitions) {
-  const hljsThemes = await hljs.buildThemes(definitions);
+  const hljsThemes = await hljs.getThemes(definitions);
 
   const themes = definitions.map(theme => {
     const backgroundRange = new Color(theme.colors.baseBackground).range(new Color(theme.colors.secondaryBackground), { space: 'hsl', outputSpace: 'hsl' });
@@ -100,11 +100,15 @@ async function getThemes(definitions) {
           --background-modifier-active:   ${Object.assign(backgroundRange(-1), { alpha: 0.48 })};
           --background-modifier-hover:    ${Object.assign(backgroundRange(-1), { alpha: 0.3  })};
           --background-modifier-selected: ${Object.assign(backgroundRange(-1), { alpha: 0.6  })};
+
+          --background-accent: ${backgroundRange(-1)};
     
           --channeltextarea-background: ${backgroundRange(-1)};
 
           --modal-background: ${backgroundRange(0)};
           --modal-footer-background: ${backgroundRange(1)};
+
+          --home-background: ${backgroundRange(1.5)};
 
           --scrollbar-auto-scrollbar-color-thumb: ${backgroundRange(2.5)};
           --scrollbar-auto-scrollbar-color-track: ${backgroundRange(1)};
@@ -112,6 +116,12 @@ async function getThemes(definitions) {
           --scrollbar-auto-track: ${backgroundRange(1)};
           --scrollbar-thin-thumb: ${backgroundRange(2.5)};
           --scrollbar-thin-track: hsl(var(--black-500-hsl)/0);
+
+          --input-background: ${backgroundRange(3)};
+          --button-secondary-background: ${backgroundRange(-2)};
+          --button-secondary-background-active: ${backgroundRange(-3)};
+          --button-secondary-background-disabled: ${backgroundRange(2)};
+          --button-secondary-background-hover: ${backgroundRange(-3)};
 
           /* foreground colors */
           --text-normal: ${theme.colors.foregroundColor};
@@ -142,10 +152,34 @@ async function getThemes(definitions) {
           background-color: var(--brand-500);
         }
 
+        .input__848cd {
+          background-color: var(--background-tertiary);
+        }
+        
+        .theme-${theme.dark ? 'dark' : 'light'} :is(.header_c43d51, .container__7590f, .scrollerContainer_bf5dbd, .container__10dc7, .header__60bef) {
+          background-color: var(--background-secondary-alt);
+        }
+
+        .theme-${theme.dark ? 'dark' : 'light'} :is(.innerHeader_b274cd, .innerHeader_afca2f):after {
+          display: none;
+        }
+
+        .theme-${theme.dark ? 'dark' : 'light'} .directoryContainer_d3edd9 {
+          background-color: var(--background-primary);
+        }
+
         .theme-${theme.dark ? 'dark' : 'light'} .searchAnswer-23w-CH,
         .theme-${theme.dark ? 'dark' : 'light'} .searchFilter-2UfsDk {
           background-color: ${theme.colors.searchBackground};
           color: ${theme.colors.searchForeground};
+        }
+
+        .theme-${theme.dark ? 'dark' : 'light'} :is(.tierHeaderLocked__4d099, .tierHeaderUnlocked_cc60fa) {
+          background-color: var(--input-background);
+        }
+
+        .theme-${theme.dark ? 'dark' : 'light'} .tierBody__615a1 {
+          background-color: var(--background-secondary-alt);
         }
 
         ${hljsThemes.find(t => t.id === theme.id).config.replace(/\.hljs/g, `.theme-${theme.dark ? 'dark' : 'light'} .hljs`)}
