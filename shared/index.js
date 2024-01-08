@@ -32,12 +32,17 @@ function getColors(theme) {
     ...templates.base.colors,
     ...(theme.dark ? templates.dark : templates.light).colors,
     ...theme.colors,
-    ...theme.overrides?.editorScheme?.colors ? Object.fromEntries(Object.entries(theme.overrides.editorScheme.colors).map(([key, value]) => [`editor${key[0].toUpperCase()}${key.slice(1)}`, value])) : {},
+    ...theme.overrides?.editorScheme?.colors 
+      ? Object.fromEntries(Object.entries(theme.overrides.editorScheme.colors).map(([key, value]) => [
+        `editor${key[0].toUpperCase()}${key.slice(1)}`,
+        value,
+      ])) 
+      : {},
   }
 }
 
-function getId(definition) {
-  return (definition.conflictName || definition.name)
+function getId(name) {
+  return name
     .toLowerCase()
     .replace(/ +/g, '-')
     .replace(/[(:\.)]/g, '');
@@ -47,7 +52,7 @@ async function getDefinitions() {
   const files = await fz.recursive(path.resolve(__dirname, '../theme/definitions'));
   return files.map(file => require(file)).map(definition => ({
     ...definition,
-    id: getId(definition),
+    id: getId(definition.conflictName || definition.name),
     colors: getColors(definition),
   }));
 }

@@ -102,11 +102,11 @@ async function getThemes(definitions) {
       }
 
       .hljs-addition {
-        color: ${theme.colors['diff.inserted']};
+        background-color: ${theme.colors['diff.inserted']};
       }
       
       .hljs-deletion {
-        color: ${theme.colors['diff.deleted']};
+        background-color: ${theme.colors['diff.deleted']};
       }
     `.replace(/\n */g, '\n').slice(1),
   }));
@@ -135,5 +135,5 @@ if (require.main === module) {
 }
 
 module.exports = {
-  buildThemes: getThemes,
+  getThemes,
 };
